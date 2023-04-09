@@ -28,5 +28,7 @@ export const Title = styled.Text`
     text-align: center;
     letter-spacing: -0.02em;
 
+    padding-bottom: ${RFValue(24)}px;
+
     color: ${({ theme }) => theme.colors.text_dark};
 `
