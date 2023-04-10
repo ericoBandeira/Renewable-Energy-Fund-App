@@ -37,7 +37,15 @@ export function Login({ navigation }: any) {
         value={password}
         onChangeText={setPassword}
       />
-      <Button title="Login" />
+      <Button
+        title="Login"
+        disabled={!(email !== "" && password.length >= 8)}
+        onPress={() =>
+          email !== "" &&
+          password.length >= 8 &&
+          navigation.navigate("Register")
+        }
+      />
       <SignUpContainer>
         <SignUpButton>Don’t have an account? </SignUpButton>
         <TextButton

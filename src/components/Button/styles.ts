@@ -16,8 +16,10 @@ export const Container = styled(RectButton)<TypeProps>`
   margin: ${RFValue(15)}px ${RFValue(20)}px;
   gap: 10px;
 
-  background: ${({ theme, color }) =>
-    color === "green"
+  background: ${({ theme, color, disabled }) =>
+    disabled
+      ? theme.colors.text
+      : color === "green"
       ? theme.colors.secondary
       : color === "purple"
       ? theme.colors.primary
