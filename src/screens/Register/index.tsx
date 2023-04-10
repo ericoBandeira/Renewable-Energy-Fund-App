@@ -16,6 +16,9 @@ import {
   CheckBoxInput,
   CheckBoxText,
   CheckBoxTextDark,
+  SuccessContainer,
+  SuccessIcon,
+  SuccessText,
 } from "./styles";
 
 export function Register({ navigation }: any) {
@@ -25,8 +28,18 @@ export function Register({ navigation }: any) {
   const [fname, setFName] = useState("");
   const [lname, setLName] = useState("");
   const [check, setCheck] = useState(false);
+  const [success, setSuccess] = useState(true);
 
-  return (
+  const delay = (ms: number) =>
+    new Promise((resolve) => setTimeout(resolve, ms));
+
+  async function successAccount() {
+    setSuccess(!success);
+    await delay(2000);
+    navigation.navigate("Login");
+  }
+
+  return success ? (
     <Container>
       <Header>
         <BackButton onPress={() => navigation.navigate("Login")}>
@@ -91,7 +104,7 @@ export function Register({ navigation }: any) {
             lname !== "" &&
             password.length >= 8 &&
             check &&
-            navigation.navigate("Login")
+            successAccount()
           }
         />
         <SignUpContainer>
@@ -104,5 +117,10 @@ export function Register({ navigation }: any) {
         </SignUpContainer>
       </ScrollView>
     </Container>
+  ) : (
+    <SuccessContainer>
+      <SuccessIcon name="checkcircleo" size={150} color="#0FDF8F" />
+      <SuccessText>Account created {"\n"}successfully</SuccessText>
+    </SuccessContainer>
   );
 }

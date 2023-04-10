@@ -9,6 +9,30 @@ export const Container = styled.View`
   background-color: ${({ theme }) => theme.colors.background};
 `;
 
+export const SuccessContainer = styled.View`
+  flex: 1;
+  background-color: ${({ theme }) => theme.colors.background};
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+`;
+
+export const SuccessIcon = styled(AntDesign)``;
+
+export const SuccessText = styled.Text`
+  font-family: "Sora_600SemiBold";
+  font-size: 24px;
+  line-height: 23px;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding-top: ${RFValue(25)}px;
+
+  color: #000000;
+`;
+
 export const Header = styled.View`
   width: 100%;
   height: ${RFValue(95)}px;
