@@ -19,7 +19,8 @@ export const Container = styled(RectButton)<TypeProps>`
 export const ButtonText = styled.Text<TypeProps>`
   font-family: ${({ theme }) => theme.fonts.regular};
   font-size: 12px;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme, color }) =>
+    color === "dark" ? theme.colors.text_dark : theme.colors.text};
 
   display: flex;
   align-items: center;

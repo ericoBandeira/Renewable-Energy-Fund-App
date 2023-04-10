@@ -11,15 +11,31 @@ import {
   Title,
 } from "./styles";
 
-export function Login({ navigation }: any) {
+export function Register({ navigation }: any) {
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [fname, setFName] = useState("");
+  const [lname, setLName] = useState("");
 
   return (
     <Container>
       <Header />
-      <Title>Login</Title>
+      <Title>Create your account</Title>
+      <Input
+        autoCapitalize="none"
+        title="First Name"
+        placeholder="First Name"
+        value={fname}
+        onChangeText={setFName}
+      />
+      <Input
+        autoCapitalize="none"
+        title="Last Name"
+        placeholder="Last Name"
+        value={lname}
+        onChangeText={setLName}
+      />
       <Input
         autoCapitalize="none"
         title="E-mail"
@@ -37,14 +53,14 @@ export function Login({ navigation }: any) {
         value={password}
         onChangeText={setPassword}
       />
-      <Button title="Login" />
+      <Button title="Create account" />
       <SignUpContainer>
-        <SignUpButton>Don’t have an account? </SignUpButton>
+        <SignUpButton>Already have an account? </SignUpButton>
         <TextButton
-          title="Sign up"
-          onPress={() => navigation.navigate("Register")}
+          title="Log in Here"
+          color="dark"
+          onPress={() => navigation.navigate("Login")}
         />
-        <SignUpButton> here</SignUpButton>
       </SignUpContainer>
     </Container>
   );

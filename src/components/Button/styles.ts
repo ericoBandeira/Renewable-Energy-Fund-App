@@ -4,6 +4,7 @@ import { RectButton } from "react-native-gesture-handler";
 
 interface TypeProps {
   color: "purple" | "green" | "outline";
+  disabled?: boolean;
 }
 
 export const Container = styled(RectButton)<TypeProps>`
