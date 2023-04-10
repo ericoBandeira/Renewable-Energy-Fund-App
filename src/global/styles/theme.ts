@@ -6,6 +6,8 @@ export default {
 
     grey: "#F4F4F4",
 
+    border: "#CFCFCF",
+
     title: "#363F5F",
     text: "#A0A0A0",
     text_dark: "#000000",

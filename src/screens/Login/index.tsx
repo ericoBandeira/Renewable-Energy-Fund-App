@@ -2,7 +2,14 @@ import React, { useState } from "react";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
 import { InputPassword } from "../../components/InputPassword";
-import { Container, Header, Title } from "./styles";
+import { TextButton } from "../../components/TextButton";
+import {
+  Container,
+  Header,
+  SignUpButton,
+  SignUpContainer,
+  Title,
+} from "./styles";
 
 export function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -31,6 +38,11 @@ export function Login() {
         onChangeText={setPassword}
       />
       <Button title="Login" />
+      <SignUpContainer>
+        <SignUpButton>Don’t have an account? </SignUpButton>
+        <TextButton title="Sign up" />
+        <SignUpButton> here</SignUpButton>
+      </SignUpContainer>
     </Container>
   );
 }

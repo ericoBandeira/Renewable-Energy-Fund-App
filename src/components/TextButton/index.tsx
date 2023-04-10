@@ -5,10 +5,10 @@ import { ButtonText, Container } from "./styles";
 
 interface InputProps extends RectButtonProperties {
   title: string;
-  color?: "purple" | "green" | "outline";
+  color?: "grey" | "dark";
 }
 
-export function Button({ title, color = "purple", ...rest }: InputProps) {
+export function TextButton({ title, color = "grey", ...rest }: InputProps) {
   return (
     <Container {...rest} color={color}>
       <ButtonText color={color}>{title}</ButtonText>

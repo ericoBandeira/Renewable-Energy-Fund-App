@@ -2,7 +2,11 @@ import styled from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
 import { RectButton } from "react-native-gesture-handler";
 
-export const Container = styled(RectButton)`
+interface TypeProps {
+  color: "purple" | "green" | "outline";
+}
+
+export const Container = styled(RectButton)<TypeProps>`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -11,11 +15,18 @@ export const Container = styled(RectButton)`
   margin: ${RFValue(15)}px ${RFValue(20)}px;
   gap: 10px;
 
-  background: ${({ theme }) => theme.colors.primary};
+  background: ${({ theme, color }) =>
+    color === "green"
+      ? theme.colors.secondary
+      : color === "purple"
+      ? theme.colors.primary
+      : theme.colors.background};
   border-radius: ${RFValue(4)}px;
+  border: ${({ theme, color }) =>
+    color === "outline" ? `1px solid ${theme.colors.grey}` : "none"};
 `;
 
-export const ButtonText = styled.Text`
+export const ButtonText = styled.Text<TypeProps>`
   font-family: ${({ theme }) => theme.fonts.regular};
   font-size: ${RFValue(16)}px;
 
@@ -23,5 +34,6 @@ export const ButtonText = styled.Text`
   align-items: center;
   text-align: center;
 
-  color: ${({ theme }) => theme.colors.background};
+  color: ${({ theme, color }) =>
+    color === "outline" ? theme.colors.primary : theme.colors.background};
 `;
