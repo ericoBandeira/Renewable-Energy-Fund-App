@@ -41,7 +41,7 @@ export function Login({ navigation }: any) {
         title="Login"
         disabled={!(email !== "" && password.length >= 8)}
         onPress={() =>
-          email !== "" && password.length >= 8 && navigation.navigate("Home")
+          email !== "" && password.length >= 8 && navigation.navigate("Init")
         }
       />
       <SignUpContainer>

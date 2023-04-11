@@ -113,7 +113,7 @@ export const PercentageText = styled.Text<TypeProps>`
     type === "up" ? theme.colors.secondary : "red"};
 `;
 
-export const Body = styled.View``;
+export const Body = styled.ScrollView``;
 
 export const BodyTitle = styled.Text`
   padding: ${RFValue(20)}px;
