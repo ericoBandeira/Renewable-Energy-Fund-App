@@ -1,4 +1,4 @@
-import { RFValue } from "react-native-responsive-fontsize";
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import styled from "styled-components/native";
 import { Feather } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
@@ -112,3 +112,21 @@ export const PercentageText = styled.Text<TypeProps>`
   color: ${({ theme, type }) =>
     type === "up" ? theme.colors.secondary : "red"};
 `;
+
+export const Body = styled.View``;
+
+export const BodyTitle = styled.Text`
+  padding: ${RFValue(20)}px;
+  font-family: "Sora_600SemiBold";
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+
+  color: ${({ theme }) => theme.colors.text_dark};
+`;
+
+export const ButtonsPainels = styled.ScrollView.attrs({
+  horizontal: true,
+  showsHorizontalScrollIndicator: false,
+  contentContainerStyle: { paddingHorizontal: 24 },
+})``;

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ChartButton } from "../../components/ChartButton";
 import {
   Container,
   Header,
@@ -18,6 +19,9 @@ import {
   PercentageText,
   ButtonIcon,
   ButtonText,
+  Body,
+  BodyTitle,
+  ButtonsPainels,
 } from "./styles";
 
 export function Home({ navigation }: any) {
@@ -56,6 +60,33 @@ export function Home({ navigation }: any) {
           </SecondHeaderBody>
         </SecondHeader>
       </Header>
+
+      <Body>
+        <BodyTitle>Funds</BodyTitle>
+        <ButtonsPainels>
+          <ChartButton
+            amount="$1032.23"
+            title="Wind Fund"
+            icon="wind"
+            type="up"
+            percentage="3.51%"
+          />
+          <ChartButton
+            amount="$986.61"
+            title="Solar Fund"
+            icon="sun"
+            type="down"
+            percentage="0.13%"
+          />
+          <ChartButton
+            amount="$1122.95"
+            title="Natural Fund"
+            icon="natural"
+            type="up"
+            percentage="1.23%"
+          />
+        </ButtonsPainels>
+      </Body>
     </Container>
   );
 }
