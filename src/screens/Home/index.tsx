@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BlankCard } from "../../components/BlankCard";
 import { ChartButton } from "../../components/ChartButton";
 import {
   Container,
@@ -22,6 +23,12 @@ import {
   Body,
   BodyTitle,
   ButtonsPainels,
+  Banner,
+  BannerTexts,
+  BannerTitle,
+  BannerText,
+  BannerImg,
+  BlankCardsBody,
 } from "./styles";
 
 export function Home({ navigation }: any) {
@@ -86,6 +93,18 @@ export function Home({ navigation }: any) {
             percentage="1.23%"
           />
         </ButtonsPainels>
+
+        <Banner>
+          <BannerTexts>
+            <BannerTitle>Learn more about {"\n"}carbon credits</BannerTitle>
+            <BannerText>Check out our top tips!</BannerText>
+          </BannerTexts>
+          <BannerImg source={require("../../utils/img/business.png")} />
+        </Banner>
+        <BlankCardsBody>
+          <BlankCard title="Why should you invest here?" />
+          <BlankCard />
+        </BlankCardsBody>
       </Body>
     </Container>
   );

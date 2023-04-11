@@ -130,3 +130,37 @@ export const ButtonsPainels = styled.ScrollView.attrs({
   showsHorizontalScrollIndicator: false,
   contentContainerStyle: { paddingHorizontal: 24 },
 })``;
+
+export const Banner = styled.View`
+  background: ${({ theme }) => theme.colors.primary};
+  border-radius: 10px;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: ${RFValue(19)}px;
+`;
+export const BannerTexts = styled.View`
+  padding: ${RFValue(20)}px;
+`;
+export const BannerTitle = styled.Text`
+  font-family: ${({ theme }) => theme.fonts.mid};
+  font-size: 16px;
+
+  color: ${({ theme }) => theme.colors.background};
+`;
+export const BannerText = styled.Text`
+  font-family: ${({ theme }) => theme.fonts.regular};
+  font-size: 12px;
+  padding-top: ${RFValue(10)}px;
+
+  color: ${({ theme }) => theme.colors.background};
+`;
+export const BannerImg = styled.Image`
+  margin-right: ${RFValue(20)}px;
+`;
+
+export const BlankCardsBody = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 ${RFValue(20)}px;
+`;
