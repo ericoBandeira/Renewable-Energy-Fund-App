@@ -65,3 +65,5 @@ export const PercentageText = styled.Text<TypePropsIncrease>`
   color: ${({ theme, type }) =>
     type === "up" ? theme.colors.secondary : "#EE8688"};
 `;
+
+export const ImageGraph = styled.Image``;

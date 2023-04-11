@@ -1,7 +1,6 @@
 import React from "react";
+import { Image } from "react-native-elements/dist/image/Image";
 import { RectButtonProperties } from "react-native-gesture-handler";
-// import { LineGraph } from "react-native-graph";
-// import gaussian from "gaussian";
 
 import {
   Amount,
@@ -9,6 +8,7 @@ import {
   ButtonIconIonicons,
   ButtonText,
   Container,
+  ImageGraph,
   IncreaseIcon,
   Percentage,
   PercentageText,
@@ -23,11 +23,6 @@ interface InputProps extends RectButtonProperties {
   percentage: string;
 }
 
-// interface GraphPoint {
-//   value: number;
-//   date: Date;
-// }
-
 const buttonIcon = {
   wind: "wind",
   sun: "sun",
@@ -40,26 +35,16 @@ const colorIcon = {
   natural: "#0FDF8F",
 };
 
+const imageGraph = {
+  wind: "../../utils/img/windGraph.png",
+  sun: "../../utils/img/sunGraph.png",
+  natural: "../../utils/img/naturalGraph.png",
+};
+
 const increaseIcon = {
   up: "arrow-up-right",
   down: "arrow-down-right",
 };
-
-// function weightedRandom(mean: number, variance: number): number {
-//   var distribution = gaussian(mean, variance);
-//   return distribution.ppf(Math.random());
-// }
-
-// export function generateRandomGraphData(length: number): GraphPoint[] {
-//   return Array<number>(length)
-//     .fill(0)
-//     .map((_, index) => ({
-//       date: new Date(
-//         new Date(2000, 0, 1).getTime() + 1000 * 60 * 60 * 24 * index
-//       ),
-//       value: weightedRandom(10, Math.pow(index + 1, 2)),
-//     }));
-// }
 
 export function ChartButton({
   title,
@@ -86,16 +71,13 @@ export function ChartButton({
       )}
 
       <ButtonText>{title}</ButtonText>
-      {/* <LineGraph
-        points={generateRandomGraphData(9)}
-        animated={true}
-        style={{
-          width: 40,
-          height: 35,
-          marginLeft: 5,
-        }}
-        color={type === "up" ? "#0FDF8F" : "#EE8688"}
-      /> */}
+      {icon === "wind" ? (
+        <ImageGraph source={require("../../utils/img/windGraph.png")} />
+      ) : icon === "sun" ? (
+        <ImageGraph source={require("../../utils/img/sunGraph.png")} />
+      ) : (
+        <ImageGraph source={require("../../utils/img/naturalGraph.png")} />
+      )}
       <Amount>
         <TotalAmount>{amount}</TotalAmount>
         <Percentage>
